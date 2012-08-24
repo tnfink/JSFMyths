@@ -1,11 +1,16 @@
-.font {
+font {
     font-family: sans-serif;
+    font-size: 15pt;
 }
 
 .mainfieldset {
     width: 500px;
 }
 
-.prooftable {
-    border-spacing: 5pt;
+table.prooftable td {
+    border:thin;
+    border-spacing:5px;
+    border-width:1px;
+    border-style:solid;
+    border-collapse: collapse;
 }

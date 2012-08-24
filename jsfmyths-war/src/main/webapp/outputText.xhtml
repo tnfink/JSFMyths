@@ -13,10 +13,9 @@
     <ui:define name="title">JSF Myths - outputText</ui:define>
 
     <ui:define name="body">
-        <fieldset>
+        <fieldset class="mainfieldset">
             <legend>JSF Myths - outputText</legend>
 
-            <f:verbatim escape="true"><b>\#{outputTextBean.text1}</b></f:verbatim>
             <p>
                 <strong>The Myth</strong><br/>
                 Every output in JSF has to be done using &lt;h:outputText&gt;
@@ -28,7 +27,7 @@
             <p>
                 <strong>The Truth</strong><br/>
                 The tag outputText is needed for rendering using JSP. It is not needed for Facelets which directly
-                supports XHTML. You can use the tag in Facelets but it provides the same feature.
+                supports XHTML. You can use the tag in Facelets but it provides no additional feature, only noise.
             </p>
 
             <strong>Proof by example</strong>
