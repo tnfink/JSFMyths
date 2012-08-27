@@ -4,8 +4,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:a4j="http://richfaces.org/a4j"
-      xmlns:rich="http://richfaces.org/rich">
+      >
 
 <body>
 <ui:composition template="/templates/template.xhtml">
@@ -28,21 +27,31 @@
                 <strong>The Truth</strong><br/>
                 The tag outputText is needed for rendering using JSP. It is not needed for Facelets which directly
                 supports XHTML. You can use the tag in Facelets but it provides no additional feature, only noise.
+
+                Use Cases where it makes:
+                - Formatting, Converter (f:convertDataTime, f:converter)
+                - Ajax rerendering
+                - Rendered-Attribute (to )
             </p>
 
             <strong>Proof by example</strong>
             <table class="prooftable" >
                 <tr><th>Description</th><th>Directly</th><th>Using &lt;h:outputText&gt;</th></tr>
-                <tr><td>Simple text</td>
+                <tr><td>Simple text <br/>
+                    <tt>Hello World</tt>
+                </td>
                     <td>#{outputTextBean.text1}</td>
                     <td><h:outputText value="#{outputTextBean.text1}"/> </td></tr>
-                <tr><td>Text with HTML code</td>
+                <tr><td>Text with HTML code <br/>
+                    <tt>Hello &lt;b>World&lt;/b></tt>
+                </td>
                     <td>#{outputTextBean.text2}</td>
                     <td><h:outputText value="#{outputTextBean.text2}"/> </td></tr>
             </table>
 
         </fieldset>
     </ui:define>
+
 </ui:composition>
 </body>
 </html>

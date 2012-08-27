@@ -1,15 +1,25 @@
-font {
+.jsfmyths {
     font-family: sans-serif;
-    font-size: 15pt;
+    font-size: 12pt;
 }
 
 .mainfieldset {
-    width: 500px;
+    width: 700px;
+}
+
+table.prooftable th {
+    background-color: #add8e6;
+    border:none;
+    border-spacing:10px;
+    border-width:1px;
+    border-style:solid;
+    border-collapse: collapse;
 }
 
 table.prooftable td {
-    border:thin;
-    border-spacing:5px;
+    background-color:#f5f5f5;
+    border:none;
+    border-spacing:10px;
     border-width:1px;
     border-style:solid;
     border-collapse: collapse;
