@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      lang="en"
+        >
 
-<head>
+<h:head>
     <title>JSF Myths</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-</head>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+</h:head>
 
-<body class="jsfmyths">
-    <ui:insert name="body">Default content</ui:insert>
+<body style="padding-top: 40px;">
+<div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="brand"><h:link outcome="/index.xhtml" value="JSF Myths"/></div>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <h:link outcome="/outputText.xhtml" value="outputText"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span9">
+            <ui:insert name="body">Default content</ui:insert>
+        </div>
+    </div>
+</div>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 
 </html>

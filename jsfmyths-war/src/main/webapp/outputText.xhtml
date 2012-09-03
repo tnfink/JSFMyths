@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      >
+        >
 
 <body>
 <ui:composition template="/templates/template.xhtml">
@@ -12,46 +11,63 @@
     <ui:define name="title">JSF Myths - outputText</ui:define>
 
     <ui:define name="body">
-        <fieldset class="mainfieldset">
-            <legend>JSF Myths - outputText</legend>
+        <h1>JSF Myths - outputText</h1>
 
-            <p>
-                <strong>The Myth</strong><br/>
-                Every output in JSF has to be done using &lt;h:outputText&gt;
-            </p>
-            <p>
-                <strong>Consequence</strong><br/>
-                The code is cluttered with a myriad of outputText tags and hardly readable,
-            </p>
-            <p>
-                <strong>The Truth</strong><br/>
-                The tag outputText is needed for rendering using JSP. It is not needed for Facelets which directly
-                supports XHTML. You can use the tag in Facelets but it provides no additional feature, only noise.
+        <h2>The Myth</h2>
 
-                Use Cases where it makes:
-                - Formatting, Converter (f:convertDataTime, f:converter)
-                - Ajax rerendering
-                - Rendered-Attribute (to )
-            </p>
+        <p class="lead">
+            Every output in JSF has to be done using <code>&lt;h:outputText&gt;</code>.
+        </p>
 
-            <strong>Proof by example</strong>
-            <table class="prooftable" >
-                <tr><th>Description</th><th>Directly</th><th>Using &lt;h:outputText&gt;</th></tr>
-                <tr><td>Simple text <br/>
-                    <tt>Hello World</tt>
+        <h2>Consequence</h2>
+
+        The code is cluttered with a myriad of outputText tags and hardly readable.
+
+        <h2>The Truth</h2>
+
+        The tag outputText is always needed only for rendering using JSP. If you use facelets, which
+        directly supports HTML, you can omit it. You can use the tag in facelets but most of the time it
+        provides no additional feature, only noise.
+        <p>
+            Here are some use cases where it actually makes sense to use:
+        </p>
+        <dl>
+            <dt>Conditional Rendering</dt>
+            <dd>The attribute <code>rendered</code> enables to show a text based on server-side condition:<br/>
+                <code>&lt;h:outputText value="\#{details.description}" rendered="\#{error}" /&gt;</code>
+            </dd>
+            <dt>Formatting</dt>
+            <dd> Using tags such as <code>&lt;f:convertDataTime&gt;, &lt;f:converter&gt;</code> it is possible to
+                adapt the textual format of a bean attribute.
+            </dd>
+            <dt>AJAX rerendering</dt>
+            <dd>If you want to dynamically rerender a text using JSF-AJAX, you need a surrounding tag with an
+                id.
+            </dd>
+        </dl>
+        <h2>Proof by example</h2>
+        <table class="table">
+            <tr>
+                <th>Description</th>
+                <th>Directly<br/><code>\#{bean.text}</code></th>
+                <th>With Tag<br/><code>&lt;h:outputText value="\#{bean.text}"/&gt;</code></th>
+            </tr>
+            <tr>
+                <td>Simple text <br/>
+                    <code>Hello World</code>
                 </td>
-                    <td>#{outputTextBean.text1}</td>
-                    <td><h:outputText value="#{outputTextBean.text1}"/> </td></tr>
-                <tr><td>Text with HTML code <br/>
-                    <tt>Hello &lt;b>World&lt;/b></tt>
+                <td>#{outputTextBean.text1}</td>
+                <td><h:outputText value="#{outputTextBean.text1}"/></td>
+            </tr>
+            <tr>
+                <td>Text with HTML code <br/>
+                    <code>Hello &lt;b>fat World&lt;/b></code>
                 </td>
-                    <td>#{outputTextBean.text2}</td>
-                    <td><h:outputText value="#{outputTextBean.text2}"/> </td></tr>
-            </table>
-
-        </fieldset>
+                <td>#{outputTextBean.text2}</td>
+                <td><h:outputText value="#{outputTextBean.text2}"/></td>
+            </tr>
+        </table>
     </ui:define>
-
 </ui:composition>
 </body>
 </html>
