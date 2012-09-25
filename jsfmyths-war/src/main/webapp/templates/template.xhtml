@@ -8,30 +8,30 @@
 <h:head>
     <title>JSF Myths</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <h:outputStylesheet name="css/bootstrap.min.css" library="default"/>
 </h:head>
 
-<body style="padding-top: 40px;">
-<div class="container">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="brand"><h:link outcome="/index.xhtml" value="JSF Myths"/></div>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li>
-                        <h:link outcome="/outputText.xhtml" value="outputText"/>
-                    </li>
-                </ul>
+<h:body style="padding-top: 40px;">
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="brand"><h:link outcome="/index.xhtml" value="JSF Myths"/></div>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li>
+                            <h:link outcome="/outputText.xhtml" value="outputText"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span9">
+                <ui:insert name="body">Default content</ui:insert>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="span9">
-            <ui:insert name="body">Default content</ui:insert>
-        </div>
-    </div>
-</div>
-<script src="../js/bootstrap.min.js"></script>
-</body>
+    <h:outputScript name="js/bootstrap.min.js" library="default"/>
+</h:body>
 
 </html>

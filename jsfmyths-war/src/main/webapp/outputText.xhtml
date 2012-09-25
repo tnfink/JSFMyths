@@ -28,23 +28,7 @@
         The tag outputText is always needed only for rendering using JSP. If you use facelets, which
         directly supports HTML, you can omit it. You can use the tag in facelets but most of the time it
         provides no additional feature, only noise.
-        <p>
-            Here are some use cases where it actually makes sense to use:
-        </p>
-        <dl>
-            <dt>Conditional Rendering</dt>
-            <dd>The attribute <code>rendered</code> enables to show a text based on server-side condition:<br/>
-                <code>&lt;h:outputText value="\#{details.description}" rendered="\#{error}" /&gt;</code>
-            </dd>
-            <dt>Formatting</dt>
-            <dd> Using tags such as <code>&lt;f:convertDataTime&gt;, &lt;f:converter&gt;</code> it is possible to
-                adapt the textual format of a bean attribute.
-            </dd>
-            <dt>AJAX rerendering</dt>
-            <dd>If you want to dynamically rerender a text using JSF-AJAX, you need a surrounding tag with an
-                id.
-            </dd>
-        </dl>
+
         <h2>Proof by example</h2>
         <table class="table">
             <tr>
@@ -67,6 +51,28 @@
                 <td><h:outputText value="#{outputTextBean.text2}"/></td>
             </tr>
         </table>
+        <h2>The exceptions</h2>
+        <p>
+            Here are some use cases where it actually makes sense to use the tag:
+        </p>
+        <dl>
+            <dt>Conditional Rendering</dt>
+            <dd>The attribute <code>rendered</code> enables to show a text based on server-side condition:<br/>
+                <code>&lt;h:outputText value="\#{details.description}" rendered="\#{error}" /&gt;</code>
+            </dd>
+            <dt>Formatting</dt>
+            <dd>
+                <ul>
+                <li> Using tags such as <code>&lt;f:convertDataTime&gt;, &lt;f:converter&gt;</code> it is possible to
+                adapt the textual format of a bean attribute.
+                </li>
+                </ul>
+            </dd>
+            <dt>AJAX rerendering</dt>
+            <dd>If you want to dynamically rerender a text using JSF-AJAX, you need a surrounding tag with an
+                id.
+            </dd>
+        </dl>
     </ui:define>
 </ui:composition>
 </body>

@@ -1,0 +1,3 @@
+Hack: this file is needed to support the welcome file in the web.xml in JSF
+  Hopefully, in a later JSF-implementation this file can be removed
+  (now: JBoss AS 7.1.2)
